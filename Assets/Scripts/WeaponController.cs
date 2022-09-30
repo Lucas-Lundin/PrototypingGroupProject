@@ -13,8 +13,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private GameObject muzzle;
     [SerializeField] private GameObject gun;
     [SerializeField] private GameObject bulletPrefab;
-
+    
     private bool isCharging;
+    private float timeSinceFired;
 
     void Start()
     {
@@ -32,12 +33,16 @@ public class WeaponController : MonoBehaviour
         {
             charge += dischargeRate * Time.deltaTime;
         }
+        // Counts the time since last fired a shot.
+        timeSinceFired += 1 * Time.deltaTime;
+
     }
 
     public virtual void Shoot()
     {
-        if (charge >= fireCost)
+        if (charge >= fireCost || timeSinceFired >= 0.1)
         {
+            timeSinceFired = 0;
             charge -= fireCost;
             Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
         }

@@ -622,6 +622,6 @@ MonoBehaviour:
   chargeRate: 0
   dischargeRate: 0
   fireCost: 0
-  muzzle: {fileID: 0}
-  gun: {fileID: 0}
+  muzzle: {fileID: 176522211474245406}
+  gun: {fileID: 4269208041285340362}
   bulletPrefab: {fileID: 0}
