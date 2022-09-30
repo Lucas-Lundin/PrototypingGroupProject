@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerFireController : MonoBehaviour
 {
-    [SerializeField] private GameObject muzzle;
-    [SerializeField] private GameObject bulletPrefab;
 
     private CharacterController controller;
+    [SerializeField] private WeaponController weapon;
+
 
     [HideInInspector]
     public bool isInputEnabled;
@@ -19,9 +19,8 @@ public class PlayerFireController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
     }
 
-    void Fire(InputAction.CallbackContext context)
+    void OnFire(InputValue value)
     {
-        Debug.Log("Fire!");
-        Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
+        weapon.Shoot();
     }
 }

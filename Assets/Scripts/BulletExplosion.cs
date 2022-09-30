@@ -18,13 +18,7 @@ public class BulletExplosion : MonoBehaviour
     void PlayEffect(float cleanDelay = 2)
     {
         var splash = Instantiate(particleEffect, transform.position, transform.rotation);
-        StartCoroutine(CleanWDelay(cleanDelay, splash));
-    }
-
-    IEnumerator CleanWDelay(float seconds, GameObject gObject)
-    {
-        yield return new WaitForSeconds(seconds);
-        Destroy(gObject);
+        Destroy(splash, cleanDelay);
     }
 
     void OnCollisionEnter(Collision other)

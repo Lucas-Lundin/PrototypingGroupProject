@@ -470,8 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a58c5d4ff1438449c58145adc0caa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muzzle: {fileID: 1116103906}
-  bulletPrefab: {fileID: 0}
+  weapon: {fileID: 2737791784066608049}
   isInputEnabled: 0
 --- !u!1 &529902650
 GameObject:
@@ -7499,12 +7498,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2737791784416854540, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 2737791784416854540, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2737791784416854540, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2737791784416854540, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_NotificationBehavior
@@ -7761,3 +7764,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+--- !u!1 &2737791784066608048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2737791783816450520, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+  m_PrefabInstance: {fileID: 2737791784066608047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2737791784066608049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791784066608048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3041ca2386970a542bb6d58405457881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCharge: 10
+  chargeRate: 0.1
+  dischargeRate: 0.05
+  fireCost: 2
+  muzzle: {fileID: 1116103906}
+  bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
