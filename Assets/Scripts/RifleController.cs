@@ -12,6 +12,7 @@ public class RifleController : WeaponController
     [SerializeField] private float fireCost;
     [SerializeField] private float fireRate;
     [SerializeField] private PlayerMovementController movementController;
+    [SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
 
@@ -45,7 +46,8 @@ public class RifleController : WeaponController
         {
             timeSinceFired = 0;
             charge -= fireCost;
-            Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
+            BulletManager.Destroy4Delay(bullet, bulletLifeSpan);
         }
     }
 

@@ -8,6 +8,7 @@ public class BulletExplosion : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damage;
 
+
     private Rigidbody rigid;
 
     void OnEnable()
@@ -32,6 +33,7 @@ public class BulletExplosion : MonoBehaviour
         if (other.gameObject.layer != 6)
         {
             PlayEffect();
+            
             //Destroy(gameObject); // refine later, don't let bullets destroy themselves
         }
     }

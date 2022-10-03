@@ -15,6 +15,7 @@ public class ShotgunController : WeaponController
     [SerializeField] private int vollyBullletAmount;
     [SerializeField] private float vollySpreadDeg; 
     [SerializeField] private PlayerMovementController movementController;
+    [SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
 
@@ -56,6 +57,8 @@ public class ShotgunController : WeaponController
             {
                 Quaternion rotationOffset = Quaternion.Euler(0f, Random.Range(-vollySpreadDeg / 2, vollySpreadDeg / 2), 0f);
                 GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * rotationOffset);
+                BulletManager.Destroy4Delay(bullet, bulletLifeSpan);
+
             }
         }
     }
