@@ -6,6 +6,7 @@ public class BulletExplosion : MonoBehaviour
 {
     [SerializeField] private GameObject particleEffect;
     [SerializeField] private float speed;
+    [SerializeField] private float damage;
 
     private Rigidbody rigid;
 
@@ -23,11 +24,16 @@ public class BulletExplosion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            //other.GetComponent<Health>().AdjustHealth(damage); or similar
+        }
+
         if (other.gameObject.layer != 6)
-            {
-                PlayEffect();
-                //Destroy(gameObject); // refine later, don't let bullets destroy themselves
-            }
+        {
+            PlayEffect();
+            //Destroy(gameObject); // refine later, don't let bullets destroy themselves
+        }
     }
 
 }
