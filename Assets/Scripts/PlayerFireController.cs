@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class PlayerFireController : MonoBehaviour
 
     private void Update()
     {
+        // Temporary, you can test to switch weapon with T-key.
         if (Input.GetKeyDown(KeyCode.T))
         {
             SwitchWeapon();
@@ -35,13 +37,14 @@ public class PlayerFireController : MonoBehaviour
     
     void SwitchWeapon()
     {
-        if (selectedWeapon == 0)
-        {
-            selectedWeapon = 1;
-        }
-        else
+        if (selectedWeapon >= (weapon.Length -1)) // If you have the last weapon selected, switch to the first one in the array.
         {
             selectedWeapon = 0;
         }
+        else
+        {
+            selectedWeapon += 1;
+
+        }     
     }
 }

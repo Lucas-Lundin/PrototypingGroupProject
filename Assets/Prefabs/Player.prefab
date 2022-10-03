@@ -632,4 +632,6 @@ MonoBehaviour:
   dischargeRate: 2
   fireCost: 10
   fireRate: 0.1
+  vollyAmount: 5
+  vollySpread: 30
   movementController: {fileID: 2737791784416854541}

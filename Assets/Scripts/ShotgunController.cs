@@ -11,6 +11,8 @@ public class ShotgunController : WeaponController
     [SerializeField] private float dischargeRate;
     [SerializeField] private float fireCost;
     [SerializeField] private float fireRate;
+    [SerializeField] private int vollyAmount;
+    [SerializeField] private float vollySpread; 
     [SerializeField] private PlayerMovementController movementController;
     private float timeSinceFired;
     private const float minCharge = 0;
@@ -45,10 +47,12 @@ public class ShotgunController : WeaponController
         {
             timeSinceFired = 0;
             charge -= fireCost;
+
+            for (int i = 0; i < vollyAmount; i++)
+            {
+                Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
+            }
             //Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
-            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1,1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
-            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
-            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
         }
     }
 
