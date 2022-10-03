@@ -40,7 +40,7 @@ public class WeaponController : MonoBehaviour
 
     public virtual void Shoot()
     {
-        if (charge >= fireCost || timeSinceFired >= 0.1)
+        if (charge >= fireCost && timeSinceFired >= 0.1)
         {
             timeSinceFired = 0;
             charge -= fireCost;

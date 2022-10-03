@@ -21,9 +21,13 @@ public class BulletExplosion : MonoBehaviour
         Destroy(splash, cleanDelay);
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        PlayEffect();
-        Destroy(gameObject); // refine later, don't let bullets destroy themselves
+        if (other.gameObject.layer != 6)
+            {
+                PlayEffect();
+                //Destroy(gameObject); // refine later, don't let bullets destroy themselves
+            }
     }
+
 }
