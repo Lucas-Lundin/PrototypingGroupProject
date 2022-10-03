@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RifleController : WeaponController
+public class ShotgunController : WeaponController
 {
     [SerializeField] private float charge;
     [SerializeField] private float maxCharge;
@@ -34,7 +34,7 @@ public class RifleController : WeaponController
         }
         Mathf.Clamp(charge, minCharge, maxCharge);
 
-        // Time since last fired a shot
+        // Time since last fired a shot.
         timeSinceFired += 1 * Time.deltaTime;
         
     }
@@ -45,7 +45,10 @@ public class RifleController : WeaponController
         {
             timeSinceFired = 0;
             charge -= fireCost;
-            Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
+            //Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
+            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1,1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
+            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
+            Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
         }
     }
 

@@ -376,7 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a58c5d4ff1438449c58145adc0caa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 4138799866682770848}
+  weapon:
+  - {fileID: 4138799866682770848}
+  - {fileID: 8395277089953480893}
   isInputEnabled: 0
 --- !u!1 &2737791784558644364
 GameObject:
@@ -585,14 +587,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2892613492251296020}
-  - component: {fileID: 2382263133446339047}
+  - component: {fileID: 8395277089953480893}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2892613492251296020
 Transform:
   m_ObjectHideFlags: 0
@@ -609,7 +611,7 @@ Transform:
   m_Father: {fileID: 2737791784558644363}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2382263133446339047
+--- !u!114 &8395277089953480893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -618,9 +620,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8547046146818990589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3041ca2386970a542bb6d58405457881, type: 3}
+  m_Script: {fileID: 11500000, guid: 44f25e06a7660f24fbec6df1a8cb14b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 176522211474245406}
   gun: {fileID: 4269208041285340362}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
+  charge: 0
+  maxCharge: 100
+  chargeRate: 10
+  dischargeRate: 2
+  fireCost: 10
+  fireRate: 0.1
+  movementController: {fileID: 2737791784416854541}
