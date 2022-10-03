@@ -23,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
     void OnEnable()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
-        agent = transform.GetChild(0).GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         weapon = GetComponent<WeaponController>();
         currentState = "Shooting";
     }
@@ -37,9 +37,10 @@ public class EnemyBehaviour : MonoBehaviour
         {
             case "Shooting":
                 {
-                    var approachDirection = (player.transform.position - agent.transform.position);
-                    approachDirection.Normalize();
-                    agent.SetDestination(agent.transform.position + approachDirection * incrementDistance);
+                    if (Vector3.Distance(agent.transform.position, player.transform.position) > outerKitingRange)
+                    {
+                        MoveTowards(player.transform.position);
+                    }
 
 
                     if (timeSinceFire >= fireRate)
@@ -58,9 +59,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             case "Kiting":
                 {
-                    var escapeDirection = (agent.transform.position - player.transform.position);
-                    escapeDirection.Normalize();
-                    agent.SetDestination(agent.transform.position + escapeDirection * incrementDistance);
+                    MoveTowards(player.transform.position, true);
 
                     if (Vector3.Distance(agent.transform.position, player.transform.position) > outerKitingRange)
                     {
@@ -69,36 +68,42 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 break;
 
-            case "Aggro":
-                {
+            //case "Aggro":
+            //    {
 
-                    //Move toward player
-                    agent.SetDestination(player.transform.position);
+            //        //Move toward player
+            //        agent.SetDestination(player.transform.position);
 
-                    //Shoot if there is line of sight
-                    if (timeSinceFire >= fireRate)
-                    {
-                        NavMeshHit hit;
-                        if (!agent.Raycast(player.transform.position, out hit))
-                        {
-                            weapon.Shoot();
-                            timeSinceFire = 0;
-                        }
-                    }
-                    //Exit criterion
-                    if (Time.time > 5000)
-                    {
-                        currentState = "Shooting";
-                    }
-                }
-                break;
+            //        //Shoot if there is line of sight
+            //        if (timeSinceFire >= fireRate)
+            //        {
+            //            NavMeshHit hit;
+            //            if (!agent.Raycast(player.transform.position, out hit))
+            //            {
+            //                weapon.Shoot();
+            //                timeSinceFire = 0;
+            //            }
+            //        }
+            //        //Exit criterion
+            //        if (Time.time > 5000)
+            //        {
+            //            currentState = "Shooting";
+            //        }
+            //    }
+            //    break;
 
         }
 
     }
 
-    void MoveTowards(Vector3 position)
+    void MoveTowards(Vector3 position, bool away=false)
     {
-
+        var moveDirection = (position - agent.transform.position);
+        moveDirection.Normalize();
+        if (away)
+        {
+            moveDirection = -moveDirection;
+        }
+        agent.SetDestination(agent.transform.position + moveDirection * incrementDistance);
     }
 }
