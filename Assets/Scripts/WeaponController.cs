@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-
-
     public GameObject muzzle;
     public GameObject gun;
     public GameObject bulletPrefab;
