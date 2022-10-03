@@ -31,16 +31,22 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSinceFire += Time.deltaTime;
+        float targetPosition = player.transform.position;
+        float agentPosition = agent.transform.position;
+        Vector3 direction;
 
-        switch(currentState)
+        timeSinceFire += Time.deltaTime;
+        switch (currentState)
         {
             case "Shooting":
                 {
-                    if (Vector3.Distance(agent.transform.position, player.transform.position) > outerKitingRange)
+                    if (Vector3.Distance(agentPosition, targetPosition) > outerKitingRange)
                     {
-                        MoveTowards(player.transform.position);
+                        direction = targetPosition - targetPosition;
+                        direction.Normalize();
+                        agent.SetDestination(agentPosition + direction * incrementDistance);
                     }
+
 
 
                     if (timeSinceFire >= fireRate)
@@ -59,7 +65,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             case "Kiting":
                 {
-                    MoveTowards(player.transform.position, true);
+                    agent.SetDestination(agent.transform.position + moveDirection * incrementDistance);
 
                     if (Vector3.Distance(agent.transform.position, player.transform.position) > outerKitingRange)
                     {
