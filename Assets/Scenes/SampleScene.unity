@@ -2874,6 +2874,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: vollySpread
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: vollySpreadDeg
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: vollyBullletAmount
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
