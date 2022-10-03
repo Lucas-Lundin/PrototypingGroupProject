@@ -47,7 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
                         agent.SetDestination(agentPosition + direction * incrementDistance);
                     }
 
-
+                    agent.transform.LookAt(targetPosition);
 
                     if (timeSinceFire >= fireRate)
                     {
