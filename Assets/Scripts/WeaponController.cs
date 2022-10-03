@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour
     public GameObject muzzle;
     public GameObject gun;
     public GameObject bulletPrefab;
-    private float bulletLifeSpan = 1;
+    private float bulletLifeSpan = 10;
 
 
     public virtual void Shoot()
