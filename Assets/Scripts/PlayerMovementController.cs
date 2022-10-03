@@ -116,4 +116,9 @@ public class PlayerMovementController : MonoBehaviour
             playerBody.rotation = Quaternion.Euler(0, angle - 90, 0);
         }
     }
+
+    public bool IsMoving()
+    {
+        return leftStickPosition != Vector2.zero;
+    }
 }
