@@ -23,7 +23,7 @@ public class PlayerFireController : MonoBehaviour
 
     private void Update()
     {
-        // Temporary, you can test to switch weapon with T-key.
+        // Temporary way to switch weapon using T-key.
         if (Input.GetKeyDown(KeyCode.T))
         {
             SwitchWeapon();

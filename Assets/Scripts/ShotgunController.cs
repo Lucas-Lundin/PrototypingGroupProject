@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,8 @@ public class ShotgunController : WeaponController
     [SerializeField] private float dischargeRate;
     [SerializeField] private float fireCost;
     [SerializeField] private float fireRate;
-    [SerializeField] private int vollyAmount;
-    [SerializeField] private float vollySpread; 
+    [SerializeField] private int vollyBullletAmount;
+    [SerializeField] private float vollySpreadDeg; 
     [SerializeField] private PlayerMovementController movementController;
     private float timeSinceFired;
     private const float minCharge = 0;
@@ -25,14 +26,16 @@ public class ShotgunController : WeaponController
 
     void Update()
     {
-        // handle charging and decharging
-        if (movementController.IsMoving())
-        {
-            charge += chargeRate * Time.deltaTime;
-        }
-        else
+        // Discharge while moving
+        if (movementController.IsMoving())  
         {
             charge -= dischargeRate * Time.deltaTime;
+        }
+        // Charge while moving
+        else
+        {
+            charge += chargeRate * Time.deltaTime;
+           
         }
         Mathf.Clamp(charge, minCharge, maxCharge);
 
@@ -48,11 +51,12 @@ public class ShotgunController : WeaponController
             timeSinceFired = 0;
             charge -= fireCost;
 
-            for (int i = 0; i < vollyAmount; i++)
+            // Spawn volly of bulllets:
+            for (int i = 0; i < vollyBullletAmount; i++)
             {
-                Instantiate(bulletPrefab, muzzle.transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1)), muzzle.transform.rotation);
+                Quaternion rotationOffset = Quaternion.Euler(0f, Random.Range(-vollySpreadDeg / 2, vollySpreadDeg / 2), 0f);
+                GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * rotationOffset);
             }
-            //Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation);
         }
     }
 
