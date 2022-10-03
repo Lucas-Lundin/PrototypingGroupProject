@@ -86,6 +86,7 @@ MonoBehaviour:
   fireCost: 10
   fireRate: 0.1
   movementController: {fileID: 2737791784416854541}
+  bulletLifeSpan: 10
 --- !u!1 &2737791783069023529
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +633,7 @@ MonoBehaviour:
   dischargeRate: 2
   fireCost: 10
   fireRate: 0.1
-  vollyAmount: 5
-  vollySpread: 30
+  vollyBullletAmount: 7
+  vollySpreadDeg: 45
   movementController: {fileID: 2737791784416854541}
+  bulletLifeSpan: 2

@@ -1673,7 +1673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24328
+  m_Name: pb_Mesh36436
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2598,6 +2598,50 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2018108237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018108239}
+  - component: {fileID: 2018108238}
+  m_Layer: 0
+  m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &2018108238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018108237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1d668899f70264baef1520906e0697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2018108239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018108237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2737791784066608047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2877,14 +2921,6 @@ PrefabInstance:
     - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: vollySpread
       value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: vollySpreadDeg
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8395277089953480893, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: vollyBullletAmount
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

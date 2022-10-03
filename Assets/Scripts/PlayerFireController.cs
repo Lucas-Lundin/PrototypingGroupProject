@@ -23,18 +23,20 @@ public class PlayerFireController : MonoBehaviour
 
     private void Update()
     {
-        // Temporary way to switch weapon using T-key.
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SwitchWeapon();
-        }
+        
     }
 
     void OnFire(InputValue value)
     {
         weapon[selectedWeapon].Shoot();
     }
-    
+
+    void OnSwapWeapon(InputValue value)
+    {
+        SwitchWeapon();
+    }
+
+
     void SwitchWeapon()
     {
         if (selectedWeapon >= (weapon.Length -1)) // If you have the last weapon selected, switch to the first one in the array.
