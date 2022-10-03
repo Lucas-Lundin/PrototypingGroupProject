@@ -27,6 +27,8 @@ public class CameraBehaviour : MonoBehaviour
 
     private Vector3 initialCameraOffset;
 
+    [SerializeField] private float lookAheadDistance;
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +67,9 @@ public class CameraBehaviour : MonoBehaviour
             return;
         }
 
-        Vector3 playerRelativeScreenPosition = cam.WorldToViewportPoint(player.transform.position);
+
+        Vector2 playerRelativeScreenPosition = cam.WorldToViewportPoint(player.transform.position);
+        playerRelativeScreenPosition += player.GetComponent<PlayerMovementController>().GetLookStick() * lookAheadDistance;
         float adjustedDamping = followDamping;
 
         if(playerRelativeScreenPosition.x <= screenEdgeForFollow.x)

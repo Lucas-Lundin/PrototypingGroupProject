@@ -23,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
     void OnEnable()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
-        agent = transform.GetChild(0).GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         weapon = GetComponent<WeaponController>();
         currentState = "Shooting";
     }
@@ -31,15 +31,22 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSinceFire += Time.deltaTime;
+        Vector3 targetPosition = player.transform.position;
+        Vector3 agentPosition = agent.transform.position;
+        Vector3 direction;
 
-        switch(currentState)
+        timeSinceFire += Time.deltaTime;
+        switch (currentState)
         {
             case "Shooting":
                 {
-                    var approachDirection = (player.transform.position - agent.transform.position);
-                    approachDirection.Normalize();
-                    agent.SetDestination(agent.transform.position + approachDirection * incrementDistance);
+                    if (Vector3.Distance(agentPosition, targetPosition) > outerKitingRange)
+                    {
+                        direction = targetPosition - agentPosition;
+                        direction.Normalize();
+                        agent.SetDestination(agentPosition + direction * incrementDistance);
+                    }
+
 
 
                     if (timeSinceFire >= fireRate)
@@ -58,9 +65,9 @@ public class EnemyBehaviour : MonoBehaviour
 
             case "Kiting":
                 {
-                    var escapeDirection = (agent.transform.position - player.transform.position);
-                    escapeDirection.Normalize();
-                    agent.SetDestination(agent.transform.position + escapeDirection * incrementDistance);
+                    direction = agentPosition - targetPosition;
+                    direction.Normalize();
+                    agent.SetDestination(agentPosition + direction * incrementDistance);
 
                     if (Vector3.Distance(agent.transform.position, player.transform.position) > outerKitingRange)
                     {
@@ -69,36 +76,42 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 break;
 
-            case "Aggro":
-                {
+            //case "Aggro":
+            //    {
 
-                    //Move toward player
-                    agent.SetDestination(player.transform.position);
+            //        //Move toward player
+            //        agent.SetDestination(player.transform.position);
 
-                    //Shoot if there is line of sight
-                    if (timeSinceFire >= fireRate)
-                    {
-                        NavMeshHit hit;
-                        if (!agent.Raycast(player.transform.position, out hit))
-                        {
-                            weapon.Shoot();
-                            timeSinceFire = 0;
-                        }
-                    }
-                    //Exit criterion
-                    if (Time.time > 5000)
-                    {
-                        currentState = "Shooting";
-                    }
-                }
-                break;
+            //        //Shoot if there is line of sight
+            //        if (timeSinceFire >= fireRate)
+            //        {
+            //            NavMeshHit hit;
+            //            if (!agent.Raycast(player.transform.position, out hit))
+            //            {
+            //                weapon.Shoot();
+            //                timeSinceFire = 0;
+            //            }
+            //        }
+            //        //Exit criterion
+            //        if (Time.time > 5000)
+            //        {
+            //            currentState = "Shooting";
+            //        }
+            //    }
+            //    break;
 
         }
 
     }
 
-    void MoveTowards(Vector3 position)
+    void MoveTowards(Vector3 position, bool away=false)
     {
-
+        var moveDirection = (position - agent.transform.position);
+        moveDirection.Normalize();
+        if (away)
+        {
+            moveDirection = -moveDirection;
+        }
+        agent.SetDestination(agent.transform.position + moveDirection * incrementDistance);
     }
 }

@@ -121,4 +121,14 @@ public class PlayerMovementController : MonoBehaviour
     {
         return leftStickPosition != Vector2.zero;
     }
+
+    public Vector2 GetMovementStick()
+    {
+        return leftStickPosition;
+    }
+
+    public Vector2 GetLookStick()
+    {
+        return rightStickPosition;
+    }
 }
