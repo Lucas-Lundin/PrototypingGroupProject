@@ -1330,6 +1330,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2737791784558644364, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4538962653689634301, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: slider
       value: 
@@ -17182,9 +17186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 610106433}
   rifleChargeSlider: {fileID: 134396578}
-  rifleText: {fileID: 0}
+  rifleText: {fileID: 2126063537}
   shotgunChargeSlider: {fileID: 1112190147}
-  shotgunText: {fileID: 0}
+  shotgunText: {fileID: 460445658}
 --- !u!4 &1810922646
 Transform:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class BulletExplosion : MonoBehaviour
         }
         else if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
+            Debug.Log(other.gameObject.layer);
             other.GetComponent<Health>().TakeDamage(damage);
         }
 
