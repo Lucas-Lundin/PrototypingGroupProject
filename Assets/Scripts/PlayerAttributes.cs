@@ -10,6 +10,7 @@ public class PlayerAttributes : MonoBehaviour
     private float currentHealth;
     [SerializeField] private float maxHealth;
     [SerializeField] private Slider slider;
+    public Slider keyAmount; 
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class PlayerAttributes : MonoBehaviour
     public void AddKeys(int amount)
     {
         amountKeys += amount;
+        keyAmount.value = amountKeys;
     }
 
     public void HealDamage(float amount)
