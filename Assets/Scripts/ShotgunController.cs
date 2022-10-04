@@ -15,7 +15,7 @@ public class ShotgunController : WeaponController
     [SerializeField] private int vollyBullletAmount;
     [SerializeField] private float vollySpreadDeg; 
     [SerializeField] private PlayerMovementController movementController;
-    [SerializeField] private float bulletLifeSpan;
+    //[SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
 
@@ -32,13 +32,13 @@ public class ShotgunController : WeaponController
         {
             charge -= dischargeRate * Time.deltaTime;
         }
-        // Charge while moving
+        // Charge while standing still
         else
         {
             charge += chargeRate * Time.deltaTime;
            
         }
-        Mathf.Clamp(charge, minCharge, maxCharge);
+        charge = Mathf.Clamp(charge, minCharge, maxCharge);
 
         // Time since last fired a shot.
         timeSinceFired += 1 * Time.deltaTime;
@@ -62,6 +62,14 @@ public class ShotgunController : WeaponController
             }
         }
     }
+    public override float GetMaxCharge()
+    {
+        return maxCharge;
+    }
 
+    public override float GetCharge()
+    {
+        return charge;
+    }
 
 }

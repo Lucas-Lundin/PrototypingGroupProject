@@ -49,4 +49,14 @@ public class PlayerFireController : MonoBehaviour
 
         }     
     }
+    public WeaponController GetRifle()
+    {
+        return weapon[0];
+    }
+
+    public WeaponController GetShotgun()
+    {
+        return weapon[1];
+    }
+
 }

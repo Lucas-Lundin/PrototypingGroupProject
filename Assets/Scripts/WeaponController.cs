@@ -7,7 +7,7 @@ public class WeaponController : MonoBehaviour
     public GameObject muzzle;
     public GameObject gun;
     public GameObject bulletPrefab;
-    private float bulletLifeSpan = 10;
+    public float bulletLifeSpan = 10;
 
 
     public virtual void Shoot()
@@ -20,4 +20,15 @@ public class WeaponController : MonoBehaviour
     {
         gun.SetActive(state);
     }
+
+    public virtual float GetMaxCharge()
+    {
+        return 0f;
+    }
+
+    public virtual float GetCharge()
+    {
+        return 0f;
+    }
+
 }
