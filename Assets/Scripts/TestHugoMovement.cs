@@ -15,6 +15,9 @@ public class TestHugoMovement : MonoBehaviour
     public float accelerationDuration;
     public float decelerationDuration;
 
+    private float maxHealth = 100;
+    private float currentHealth;
+
     private float targetSpeed;
     private float speedChangeTimer = 0;
     private float lastVelocitybeforeDeceleration = 0;
@@ -40,6 +43,8 @@ public class TestHugoMovement : MonoBehaviour
         playerBody = transform.GetChild(0);
         movementVector = Vector3.zero;
         targetSpeed = maximumSpeed;
+
+        currentHealth = maxHealth;
     }
 
     void Update()
