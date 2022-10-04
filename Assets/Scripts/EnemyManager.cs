@@ -4,22 +4,39 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static EnemyManager instance; 
+    [SerializeField] private Spawner[] enemySpawns;
+
+
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        EnemyManager.SpawnAll();
+    }
+
+    public static EnemyManager GetInstance()
+    {
+        return instance;
     }
 
     public static void EnemyDies(GameObject enemy)
     {
         Destroy(enemy);
     }
-    //enemy dies
+
+    public static void SpawnAll()
+    {
+        foreach (Spawner spawner in GetInstance().enemySpawns)
+        {
+            spawner.Spawn();
+        }
+    }
 }
 

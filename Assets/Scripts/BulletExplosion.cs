@@ -27,7 +27,6 @@ public class BulletExplosion : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && LayerInMask("OnlyPlayer", targetsMask))
         {
-            Debug.Log("Hit player");
             other.GetComponent<PlayerAttributes>().TakeDamage(damage);
         }
         else if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
@@ -41,9 +40,7 @@ public class BulletExplosion : MonoBehaviour
 
     bool LayerInMask(string layerName, LayerMask mask)
     {
-        Debug.Log("Comparing" + layerName);
         bool returnValue = (mask & (1 << LayerMask.NameToLayer(layerName))) != 0;
-        Debug.Log(returnValue);
         return returnValue;
     }
 }

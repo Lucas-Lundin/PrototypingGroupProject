@@ -25,13 +25,12 @@ public class PlayerAttributes : MonoBehaviour
             transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
         }
         slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
-        Debug.Log(slider.value);
-        Debug.Log(currentHealth);
     }
 
-    public void GetStars(int amount)
+    public void AddStars(int amount)
     {
         amountStars += amount;
+        Debug.Log(amountStars);
     }
 
     public void HealDamage(float amount)
