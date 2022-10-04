@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2122880243210105171}
   - component: {fileID: 8289634253098359059}
   - component: {fileID: 9183758455305061436}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6612142655720758371}
   - component: {fileID: 6612142655720758370}
   - component: {fileID: 1196730915763708328}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6612142655720758373}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

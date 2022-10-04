@@ -16,7 +16,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<PlayerAttributes>().AddStars(1);
+            other.GetComponent<PlayerAttributes>().AddKeys(1);
 
             if (particleEffect != null)
             {

@@ -15449,6 +15449,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2891677957454200739, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 4598503099762932198, guid: aa7f388fabf365f449b682e3f3c79fac, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
@@ -17178,7 +17182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 610106433}
   rifleChargeSlider: {fileID: 134396578}
+  rifleText: {fileID: 0}
   shotgunChargeSlider: {fileID: 1112190147}
+  shotgunText: {fileID: 0}
 --- !u!4 &1810922646
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerAttributes : MonoBehaviour
 {
-    private int amountStars;
+    private int amountKeys;
 
     private float currentHealth;
     [SerializeField] private float maxHealth;
@@ -27,10 +27,9 @@ public class PlayerAttributes : MonoBehaviour
         slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
     }
 
-    public void AddStars(int amount)
+    public void AddKeys(int amount)
     {
-        amountStars += amount;
-        Debug.Log(amountStars);
+        amountKeys += amount;
     }
 
     public void HealDamage(float amount)
