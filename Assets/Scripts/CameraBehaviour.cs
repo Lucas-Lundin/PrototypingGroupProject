@@ -37,6 +37,7 @@ public class CameraBehaviour : MonoBehaviour
         initialCameraOffset = transform.position - player.transform.position;
     }
 
+
     // Update is called once per frame
     void LateUpdate()
     {
@@ -68,8 +69,10 @@ public class CameraBehaviour : MonoBehaviour
         }
 
 
+      
         Vector2 playerRelativeScreenPosition = cam.WorldToViewportPoint(player.transform.position);
         playerRelativeScreenPosition += player.GetComponent<PlayerMovementController>().GetLookStick() * lookAheadDistance;
+
         float adjustedDamping = followDamping;
 
         if(playerRelativeScreenPosition.x <= screenEdgeForFollow.x)
