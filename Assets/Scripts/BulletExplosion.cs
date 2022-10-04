@@ -8,7 +8,6 @@ public class BulletExplosion : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damage;
 
-
     private Rigidbody rigid;
 
     void OnEnable()
@@ -30,11 +29,10 @@ public class BulletExplosion : MonoBehaviour
             other.GetComponent<Health>().TakeDamage(damage);
         }
 
-        if (other.gameObject.layer != 6)
+        if (other.gameObject.layer != gameObject.layer)
         {
             PlayEffect();
-            
-            //Destroy(gameObject); // refine later, don't let bullets destroy themselves
+            BulletManager.Destroy4Delay(gameObject);
         }
     }
 
