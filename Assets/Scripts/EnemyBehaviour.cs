@@ -49,7 +49,10 @@ public class EnemyBehaviour : MonoBehaviour
 
                     agent.transform.LookAt(targetPosition);
 
-                    if (timeSinceFire >= fireRate)
+                    NavMeshHit hit;
+                    bool clearShot = !agent.Raycast(targetPosition, out hit);
+
+                    if (timeSinceFire >= fireRate && clearShot)
                     {
                         weapon.Shoot();
                         timeSinceFire = 0;
