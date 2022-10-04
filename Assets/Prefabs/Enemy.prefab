@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4375276711115390829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4375276711166457063}
   - component: {fileID: 4375276711166457062}
   - component: {fileID: 4375276711166457061}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4375276711393805911}
   - component: {fileID: 4375276711393805910}
   - component: {fileID: 4375276711393805909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 4375276711714316076}
   - component: {fileID: 2001873166358889159}
   - component: {fileID: 1090911568969330360}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   innerKitingRange: 8
   outerKitingRange: 12
   corneredRange: 0
-  incrementDistance: 1
+  incrementDistance: 3
 --- !u!195 &4375276711714316076
 NavMeshAgent:
   m_ObjectHideFlags: 0

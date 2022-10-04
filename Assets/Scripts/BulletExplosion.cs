@@ -7,6 +7,7 @@ public class BulletExplosion : MonoBehaviour
     [SerializeField] private GameObject particleEffect;
     [SerializeField] private float speed;
     [SerializeField] private float damage;
+    [SerializeField] private LayerMask targetsMask;
 
     private Rigidbody rigid;
 
@@ -24,16 +25,25 @@ public class BulletExplosion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Destructible")
+        if (other.gameObject.tag == "Player" && LayerInMask("OnlyPlayer", targetsMask))
+        {
+            Debug.Log("Hit player");
+            other.GetComponent<PlayerAttributes>().TakeDamage(damage);
+        }
+        else if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
             other.GetComponent<Health>().TakeDamage(damage);
         }
 
-        if (other.gameObject.layer != gameObject.layer)
-        {
-            PlayEffect();
-            BulletManager.Destroy4Delay(gameObject);
-        }
+        PlayEffect();
+        BulletManager.Destroy4Delay(gameObject);
     }
 
+    bool LayerInMask(string layerName, LayerMask mask)
+    {
+        Debug.Log("Comparing" + layerName);
+        bool returnValue = (mask & (1 << LayerMask.NameToLayer(layerName))) != 0;
+        Debug.Log(returnValue);
+        return returnValue;
+    }
 }

@@ -11,16 +11,22 @@ public class PlayerAttributes : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private Slider slider;
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        slider.value = currentHealth;
         // on hurt visual effects go here
         if (currentHealth <= 0)
         {
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+            transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
         }
+        slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
+        Debug.Log(slider.value);
+        Debug.Log(currentHealth);
     }
 
     public void GetStars(int amount)
@@ -31,8 +37,7 @@ public class PlayerAttributes : MonoBehaviour
     public void HealDamage(float amount)
     {
         currentHealth += amount;
-        slider.value = currentHealth;
-        slider.value = Mathf.Clamp(currentHealth, 0, maxHealth);
+        slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
         // on heal visual effects go here
     }
 }
