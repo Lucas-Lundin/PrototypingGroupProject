@@ -33,11 +33,11 @@ public class PlayerFireController : MonoBehaviour
 
     void OnSwapWeapon(InputValue value)
     {
-        SwitchWeapon();
+        SwapWeapon();
     }
 
 
-    void SwitchWeapon()
+    void SwapWeapon()
     {
         if (selectedWeapon >= (weapon.Length -1)) // If you have the last weapon selected, switch to the first one in the array.
         {
@@ -49,6 +49,12 @@ public class PlayerFireController : MonoBehaviour
 
         }     
     }
+
+    public int GetSelectedWeapon()
+    {
+        return selectedWeapon;
+    }
+
     public WeaponController GetRifle()
     {
         return weapon[0];
