@@ -79,6 +79,7 @@ MonoBehaviour:
   muzzle: {fileID: 2737791783069023529}
   gun: {fileID: 2737791783816450520}
   bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
+  bulletLifeSpan: 10
   charge: 0
   maxCharge: 100
   chargeRate: 5
@@ -86,7 +87,6 @@ MonoBehaviour:
   fireCost: 10
   fireRate: 0.1
   movementController: {fileID: 2737791784416854541}
-  bulletLifeSpan: 10
 --- !u!1 &2737791783069023529
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +642,7 @@ MonoBehaviour:
   muzzle: {fileID: 176522211474245406}
   gun: {fileID: 4269208041285340362}
   bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
+  bulletLifeSpan: 2
   charge: 0
   maxCharge: 100
   chargeRate: 10
@@ -649,6 +650,5 @@ MonoBehaviour:
   fireCost: 10
   fireRate: 0.1
   vollyBullletAmount: 7
-  vollySpreadDeg: 45
+  vollySpreadAngle: 45
   movementController: {fileID: 2737791784416854541}
-  bulletLifeSpan: 2

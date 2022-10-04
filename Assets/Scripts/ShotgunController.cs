@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ShotgunController : WeaponController
@@ -13,7 +14,7 @@ public class ShotgunController : WeaponController
     [SerializeField] private float fireCost;
     [SerializeField] private float fireRate;
     [SerializeField] private int vollyBullletAmount;
-    [SerializeField] private float vollySpreadDeg; 
+    [SerializeField] private float vollySpreadAngle; 
     [SerializeField] private PlayerMovementController movementController;
     //[SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
@@ -52,10 +53,16 @@ public class ShotgunController : WeaponController
             timeSinceFired = 0;
             charge -= fireCost;
 
-            // Spawn volly of bulllets:
+
+
+            // Spawns the volly of bulllets:
+            float rotationBetweenBullets = vollySpreadAngle / vollyBullletAmount; // Amount of rotation offset between each bullet.
             for (int i = 0; i < vollyBullletAmount; i++)
             {
-                Quaternion rotationOffset = Quaternion.Euler(0f, Random.Range(-vollySpreadDeg / 2, vollySpreadDeg / 2), 0f);
+                //Quaternion rotationOffset = Quaternion.Euler(0f, Random.Range(-vollySpreadAngle / 2, vollySpreadAngle / 2), 0f); //Random distrubition within the spread angle
+                
+                Quaternion rotationOffset = Quaternion.Euler(0f, (-vollySpreadAngle / 2) + (rotationBetweenBullets * i), 0f);
+
                 GameObject bullet = Instantiate(bulletPrefab, muzzle.transform.position, muzzle.transform.rotation * rotationOffset);
                 BulletManager.Destroy4Delay(bullet, bulletLifeSpan);
 
