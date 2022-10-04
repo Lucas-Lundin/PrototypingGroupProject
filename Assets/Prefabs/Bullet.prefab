@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 4598503099762932198, guid: aa7f388fabf365f449b682e3f3c79fac, type: 3}
-  speed: 200
+  speed: 500
+  damage: 100
 --- !u!54 &21274689309929569
 Rigidbody:
   m_ObjectHideFlags: 0

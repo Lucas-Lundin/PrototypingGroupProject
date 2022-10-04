@@ -25,9 +25,9 @@ public class BulletExplosion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Destructible")
         {
-            //other.GetComponent<Health>().AdjustHealth(damage); or similar
+            other.GetComponent<Health>().TakeDamage(damage);
         }
 
         if (other.gameObject.layer != 6)
