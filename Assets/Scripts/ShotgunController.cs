@@ -23,7 +23,7 @@ public class ShotgunController : WeaponController
 
     void Start()
     {
-        charge = maxCharge;
+        charge = minCharge;
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class ShotgunController : WeaponController
 
 
             // Spawns the volly of bulllets:
-            float rotationBetweenBullets = vollySpreadAngle / vollyBullletAmount; // Amount of rotation offset between each bullet.
+            float rotationBetweenBullets = vollySpreadAngle / (vollyBullletAmount -1); // Amount of rotation offset between each bullet.
             for (int i = 0; i < vollyBullletAmount; i++)
             {
                 //Quaternion rotationOffset = Quaternion.Euler(0f, Random.Range(-vollySpreadAngle / 2, vollySpreadAngle / 2), 0f); //Random distrubition within the spread angle
@@ -77,6 +77,11 @@ public class ShotgunController : WeaponController
     public override float GetCharge()
     {
         return charge;
+    }
+
+    public float GetVollySpreadAngle()
+    {
+        return vollySpreadAngle;
     }
 
 }
