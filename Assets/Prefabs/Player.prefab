@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b2bba174913244eb68c393806b5cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumSpeed: 15
+  maximumSpeed: 12
   gravityValue: 0.7
   accelerationCurve:
     serializedVersion: 2
@@ -610,8 +610,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  accelerationDuration: 1.5
-  decelerationDuration: 0.75
+  accelerationDuration: 0.5
+  decelerationDuration: 0.5
   isInputEnabled: 0
 --- !u!114 &8995462121033474886
 MonoBehaviour:

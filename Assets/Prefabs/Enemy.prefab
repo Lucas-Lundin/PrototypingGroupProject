@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  innerKitingRange: 8
-  outerKitingRange: 12
-  corneredRange: 0
+  innerKitingRange: 5
+  outerKitingRange: 8
+  strikingDistance: 0
   incrementDistance: 3
   startState: Shooting
 --- !u!195 &4375276711714316076
