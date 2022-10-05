@@ -65,8 +65,11 @@ public class CameraBehaviour : MonoBehaviour
     {
         if (shouldAlwaysFollowPlayerInGameplay)
         {
-            transform.position = Vector3.Lerp(transform.position, player.transform.position + initialCameraOffset, followDamping * Time.deltaTime);
-            //return;
+            Vector2 lookAhead2D = player.GetComponent<PlayerMovementController>().GetLookStick() * lookAheadDistance;
+            Vector3 lookAheadPosition = player.transform.position + new Vector3(lookAhead2D.x, 0, lookAhead2D.y);
+            transform.position = Vector3.Lerp(transform.position, lookAheadPosition + initialCameraOffset, followDamping * Time.deltaTime);
+            
+            return;
         }
 
 
