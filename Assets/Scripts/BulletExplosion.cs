@@ -30,7 +30,7 @@ public class BulletExplosion : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && LayerInMask("OnlyPlayer", targetsMask))
         {
-            other.transform.parent.GetComponent<PlayerAttributes>().TakeDamage(damage);
+            other.GetComponent<PlayerAttributes>().TakeDamage(damage);
         }
         else if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {

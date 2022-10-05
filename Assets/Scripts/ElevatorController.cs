@@ -24,6 +24,7 @@ public class ElevatorController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
             timeOnElevator += Time.deltaTime;
@@ -33,44 +34,43 @@ public class ElevatorController : MonoBehaviour
             {
                 state = "rising";
                 timeOnElevator = 0;
-                Debug.Log(state);
             }
             else if (timeOnElevator >= warmupTime && state == "up")
             {
                 state = "falling";
                 timeOnElevator = 0;
-                Debug.Log(state);
             }
             else if (state == "rising")
             {
+                Debug.Log(state);
                 var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, timeOnElevator / travelTime);
                 rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
-                other.gameObject.transform.parent.parent = transform;
+                other.gameObject.transform.parent = transform;
 
                 if (timeOnElevator >= travelTime)
                 {
                     state = "up";
                     timeOnElevator = 0;
-                    other.gameObject.transform.parent.parent = null;
+                    other.gameObject.transform.parent = null;
                     Debug.Log(state);
                 }
             }
             else if (state == "falling")
             {
+                Debug.Log(state);
                 var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, (1 - timeOnElevator / travelTime));
                 rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
-                other.gameObject.transform.parent.parent = transform;
+                other.gameObject.transform.parent = transform;
 
                 if (timeOnElevator >= travelTime)
                 {
                     state = "down";
                     timeOnElevator = 0;
-                    other.gameObject.transform.parent.parent = null;
+                    other.gameObject.transform.parent = null;
                     Debug.Log(state);
                 }
             }
         }
-            
             
     }
 
@@ -79,7 +79,7 @@ public class ElevatorController : MonoBehaviour
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
             timeOnElevator = 0;
-            other.gameObject.transform.parent.parent = null;
+            other.gameObject.transform.parent = null;
         }
     }
 
