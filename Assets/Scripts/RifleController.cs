@@ -20,7 +20,7 @@ public class RifleController : WeaponController
 
     void Start()
     {
-        charge = maxCharge;  
+        charge = minCharge;  
     }
 
     void Update()

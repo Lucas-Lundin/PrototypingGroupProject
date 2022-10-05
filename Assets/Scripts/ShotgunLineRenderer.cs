@@ -14,7 +14,7 @@ public class ShotgunLineRenderer : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = points.Length;
         
-        
+        /*
         // Get shotgun spread angle:
         spreadAngle = shotgun.GetComponent<ShotgunController>().GetVollySpreadAngle();
         
@@ -24,7 +24,7 @@ public class ShotgunLineRenderer : MonoBehaviour
 
         points[0].transform.position = points[0].transform.forward * 2;
         points[2].transform.position = points[2].transform.forward * 2;
-        
+        */
 
     }
 
