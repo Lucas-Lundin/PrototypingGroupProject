@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    public enum CameraState {
+    public enum CameraState 
+    {
         Gameplay,
         ScriptedCinematic,
         Death
@@ -65,7 +66,7 @@ public class CameraBehaviour : MonoBehaviour
         if (shouldAlwaysFollowPlayerInGameplay)
         {
             transform.position = Vector3.Lerp(transform.position, player.transform.position + initialCameraOffset, followDamping * Time.deltaTime);
-            return;
+            //return;
         }
 
 
