@@ -203,11 +203,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzle: {fileID: 2737791783069023529}
   gun: {fileID: 2737791783816450520}
-  bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
+  bulletPrefab: {fileID: 21274689309929574, guid: 79d6eeb54c8ba4e40ab704f8cec2495d, type: 3}
   bulletLifeSpan: 10
   charge: 0
   maxCharge: 100
-  chargeRate: 5
+  chargeRate: 15
   dischargeRate: 2
   fireCost: 10
   fireRate: 0.1
@@ -801,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3191404301910503571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 0, z: 9}
+  m_LocalPosition: {x: -13, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -961,7 +961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4357938280460331141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 9}
+  m_LocalPosition: {x: 13, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1046,13 +1046,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzle: {fileID: 176522211474245406}
   gun: {fileID: 4269208041285340362}
-  bulletPrefab: {fileID: 21274689309929574, guid: d353fd8a999517e49ade4597afd568f6, type: 3}
-  bulletLifeSpan: 2
+  bulletPrefab: {fileID: 21274689309929574, guid: 9e5b481b52dc62f4d8f1b6e8d34b309c, type: 3}
+  bulletLifeSpan: 0.5
   charge: 0
   maxCharge: 100
-  chargeRate: 10
+  chargeRate: 15
   dischargeRate: 2
-  fireCost: 10
+  fireCost: 30
   fireRate: 0.1
   vollyBullletAmount: 7
   vollySpreadAngle: 45
