@@ -5,7 +5,7 @@ using UnityEngine;
 public class RifleLineRenderer : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    [SerializeField] private Transform[] points;
+    [SerializeField] private GameObject[] points;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class RifleLineRenderer : MonoBehaviour
     {
      for(int i = 0; i < points.Length; i++)
         {
-            lineRenderer.SetPosition(i, points[i].position);
+            lineRenderer.SetPosition(i, points[i].transform.position);
         }
     }
 }

@@ -79,4 +79,9 @@ public class ShotgunController : WeaponController
         return charge;
     }
 
+    public float GetVollySpreadAngle()
+    {
+        return vollySpreadAngle;
+    }
+
 }

@@ -15,6 +15,7 @@ public class RifleController : WeaponController
     //[SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
+    
 
 
     void Start()

@@ -10,7 +10,11 @@ public class PlayerFireController : MonoBehaviour
     private CharacterController controller;
     //[SerializeField] private WeaponController weapon;
     [SerializeField] private WeaponController[] weapon;
+    [SerializeField] private LineRenderer lineRendererRifle;
+    [SerializeField] private LineRenderer lineRendererShotgun;
     private int selectedWeapon = 0;
+
+
 
     [HideInInspector]
     public bool isInputEnabled;
@@ -19,6 +23,8 @@ public class PlayerFireController : MonoBehaviour
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        lineRendererRifle.enabled = true;
+        lineRendererShotgun.enabled = false;
     }
 
     private void Update()
@@ -42,11 +48,14 @@ public class PlayerFireController : MonoBehaviour
         if (selectedWeapon >= (weapon.Length -1)) // If you have the last weapon selected, switch to the first one in the array.
         {
             selectedWeapon = 0;
+            lineRendererRifle.enabled = true;
+            lineRendererShotgun.enabled = false;
         }
         else
         {
             selectedWeapon += 1;
-
+            lineRendererRifle.enabled = false;
+            lineRendererShotgun.enabled = true;
         }     
     }
 
