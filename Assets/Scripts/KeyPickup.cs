@@ -14,9 +14,10 @@ public class KeyPickup : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<PlayerAttributes>().AddKeys(1);
+            other.transform.parent.GetComponent<PlayerAttributes>().AddKeys(1);
 
             if (particleEffect != null)
             {
