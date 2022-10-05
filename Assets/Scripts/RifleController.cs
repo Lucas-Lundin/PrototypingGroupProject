@@ -19,7 +19,7 @@ public class RifleController : WeaponController
 
     void Start()
     {
-        charge = maxCharge;
+        charge = maxCharge;  
     }
 
     void Update()
@@ -38,8 +38,9 @@ public class RifleController : WeaponController
 
         // Time since last fired a shot
         timeSinceFired += 1 * Time.deltaTime;
-        
     }
+
+
 
     public override void Shoot()
     {
