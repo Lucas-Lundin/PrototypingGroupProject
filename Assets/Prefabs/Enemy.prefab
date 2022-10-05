@@ -265,6 +265,7 @@ MonoBehaviour:
   muzzle: {fileID: 4375276711115390828}
   gun: {fileID: 4375276711393805908}
   bulletPrefab: {fileID: 2187281039761752221, guid: 4267902f67bdf2d41a6f387da1fb4f2f, type: 3}
+  bulletLifeSpan: 10
 --- !u!114 &4375276711714316065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +283,7 @@ MonoBehaviour:
   outerKitingRange: 12
   corneredRange: 0
   incrementDistance: 3
+  startState: Shooting
 --- !u!195 &4375276711714316076
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -19,8 +19,11 @@ public class BulletExplosion : MonoBehaviour
 
     void PlayEffect(float cleanDelay = 2)
     {
-        var splash = Instantiate(particleEffect, transform.position, transform.rotation);
-        Destroy(splash, cleanDelay);
+        if(particleEffect != null)
+        {
+            var splash = Instantiate(particleEffect, transform.position, transform.rotation);
+            Destroy(splash, cleanDelay);
+        }
     }
 
     void OnTriggerEnter(Collider other)

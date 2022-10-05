@@ -16,8 +16,9 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float fireRate;
     [SerializeField] private float innerKitingRange;
     [SerializeField] private float outerKitingRange;
-    [SerializeField] private float corneredRange;
+    [SerializeField] private float strikingDistance;
     [SerializeField] private float incrementDistance;
+    [SerializeField] private string startState;
 
 
     void OnEnable()
@@ -25,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         agent = GetComponent<NavMeshAgent>();
         weapon = GetComponent<WeaponController>();
-        currentState = "Shooting";
+        currentState = startState;
     }
 
     // Update is called once per frame
@@ -79,42 +80,13 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 break;
 
-            //case "Aggro":
-            //    {
-
-            //        //Move toward player
-            //        agent.SetDestination(player.transform.position);
-
-            //        //Shoot if there is line of sight
-            //        if (timeSinceFire >= fireRate)
-            //        {
-            //            NavMeshHit hit;
-            //            if (!agent.Raycast(player.transform.position, out hit))
-            //            {
-            //                weapon.Shoot();
-            //                timeSinceFire = 0;
-            //            }
-            //        }
-            //        //Exit criterion
-            //        if (Time.time > 5000)
-            //        {
-            //            currentState = "Shooting";
-            //        }
-            //    }
-            //    break;
+            case "Aggro":
+                {
+                    agent.SetDestination(targetPosition);
+                }
+                break;
 
         }
 
-    }
-
-    void MoveTowards(Vector3 position, bool away=false)
-    {
-        var moveDirection = (position - agent.transform.position);
-        moveDirection.Normalize();
-        if (away)
-        {
-            moveDirection = -moveDirection;
-        }
-        agent.SetDestination(agent.transform.position + moveDirection * incrementDistance);
     }
 }

@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 2737791784416854541}
   - component: {fileID: 8995462121033474886}
   - component: {fileID: 4538962653689634301}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,6 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   slider: {fileID: 0}
+  keyAmount: {fileID: 0}
 --- !u!1 &2737791784558644364
 GameObject:
   m_ObjectHideFlags: 0
