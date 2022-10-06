@@ -19,7 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float strikingDistance;
     [SerializeField] private float incrementDistance;
     [SerializeField] private string startState;
-
+    [SerializeField] private float randomMoveSpeedOffset;
 
     void OnEnable()
     {
@@ -27,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         weapon = GetComponent<WeaponController>();
         currentState = startState;
+        GetComponent<NavMeshAgent>().speed += Random.Range(-randomMoveSpeedOffset / 2, randomMoveSpeedOffset/2);
     }
 
     // Update is called once per frame

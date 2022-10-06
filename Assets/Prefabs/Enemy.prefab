@@ -284,6 +284,7 @@ MonoBehaviour:
   strikingDistance: 0
   incrementDistance: 0.5
   startState: Shooting
+  randomMoveSpeedOffset: 2
 --- !u!195 &4375276711714316076
 NavMeshAgent:
   m_ObjectHideFlags: 0
