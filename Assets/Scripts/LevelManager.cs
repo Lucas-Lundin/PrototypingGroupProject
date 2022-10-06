@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
         if (LM.currentLevel + 1 < SceneManager.sceneCount)
         {
             SceneManager.LoadSceneAsync(LM.currentLevel + 1);
+            LM.currentLevel += 1;
         }
         else
         {
