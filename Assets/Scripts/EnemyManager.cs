@@ -38,5 +38,10 @@ public class EnemyManager : MonoBehaviour
             spawner.Spawn();
         }
     }
+
+    public static void SpawnByObject(Spawner spawnPoint)
+    {
+        spawnPoint.Spawn();
+    }
 }
 
