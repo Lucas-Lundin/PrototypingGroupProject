@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 5886407943890352424}
   - component: {fileID: 5086078538521018608}
   - component: {fileID: 1795502108106542059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Open Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
