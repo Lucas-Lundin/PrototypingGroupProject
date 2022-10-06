@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     public static void LoadNext()
     {
         var LM = GetInstance();
-        if (LM.currentLevel < SceneManager.sceneCount)
+        if (LM.currentLevel + 1 < SceneManager.sceneCount)
         {
             SceneManager.LoadSceneAsync(LM.currentLevel + 1);
         }
