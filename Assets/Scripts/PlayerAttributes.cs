@@ -24,6 +24,7 @@ public class PlayerAttributes : MonoBehaviour
         if (currentHealth <= 0)
         {
             transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
+            LevelManager.Reload();
         }
         slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
     }
@@ -39,5 +40,10 @@ public class PlayerAttributes : MonoBehaviour
         currentHealth += amount;
         slider.value = Mathf.Clamp(currentHealth, 0, maxHealth) / maxHealth;
         // on heal visual effects go here
+    }
+
+    public int GetKeys()
+    {
+        return amountKeys;
     }
 }
