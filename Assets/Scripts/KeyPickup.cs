@@ -17,7 +17,7 @@ public class KeyPickup : MonoBehaviour
         Debug.Log(other);
         if (other.gameObject.tag == "Player")
         {
-            other.transform.parent.GetComponent<PlayerAttributes>().AddKeys(1);
+            other.gameObject.GetComponent<PlayerAttributes>().AddKeys(1);
 
             if (particleEffect != null)
             {
