@@ -126,8 +126,13 @@ MonoBehaviour:
   player: {fileID: 0}
   rifleChargeSlider: {fileID: 5829051898404803972}
   rifleText: {fileID: 5829051897017239703}
+  rifleFill: {fileID: 5829051897047111871}
   shotgunChargeSlider: {fileID: 5829051897502499813}
   shotgunText: {fileID: 5829051898691287292}
+  shotgunFill: {fileID: 5829051898657040714}
+  colorSliderNotCharging: {r: 0.29803923, g: 0.36862746, b: 0.8980393, a: 1}
+  colorSliderCharging: {r: 0, g: 0.60588074, b: 1, a: 1}
+  chargeColorBlinkSpeed: 6
 --- !u!1 &5829051896807032232
 GameObject:
   m_ObjectHideFlags: 0

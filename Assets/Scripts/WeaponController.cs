@@ -30,5 +30,10 @@ public class WeaponController : MonoBehaviour
     {
         return 0f;
     }
+    public virtual bool GetIsCharging()
+    {
+        return false;
+    }
+
 
 }

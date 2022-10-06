@@ -19,7 +19,7 @@ public class ShotgunController : WeaponController
     //[SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
-
+    private bool isCharging = false;
 
     void Start()
     {
@@ -31,11 +31,13 @@ public class ShotgunController : WeaponController
         // Discharge while moving
         if (movementController.IsMoving())  
         {
+            isCharging = false;
             charge -= dischargeRate * Time.deltaTime;
         }
         // Charge while standing still
         else
         {
+            isCharging = true;
             charge += chargeRate * Time.deltaTime;
            
         }
@@ -84,4 +86,8 @@ public class ShotgunController : WeaponController
         return vollySpreadAngle;
     }
 
+    public override bool GetIsCharging() 
+    {
+        return isCharging;
+    }
 }

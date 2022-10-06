@@ -15,7 +15,7 @@ public class RifleController : WeaponController
     //[SerializeField] private float bulletLifeSpan;
     private float timeSinceFired;
     private const float minCharge = 0;
-    
+    private bool isCharging = false;
 
 
     void Start()
@@ -28,11 +28,13 @@ public class RifleController : WeaponController
         // Charge while moving
         if (movementController.IsMoving())
         {
+            isCharging = true;
             charge += chargeRate * Time.deltaTime;
         }
         // Discharge while standing still
         else
         {
+            isCharging = false;
             charge -= dischargeRate * Time.deltaTime;
         }
         charge = Mathf.Clamp(charge, minCharge, maxCharge);
@@ -64,5 +66,8 @@ public class RifleController : WeaponController
         return charge;
     }
 
-
+    public override bool GetIsCharging()
+    {
+        return isCharging;
+    }
 }
