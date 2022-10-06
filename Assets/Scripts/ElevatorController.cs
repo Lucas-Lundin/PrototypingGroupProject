@@ -80,6 +80,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
+            Debug.Log("Enter");
             timeOnElevator = 0;
             other.gameObject.transform.parent = gameObject.transform;
         }
@@ -89,6 +90,7 @@ public class ElevatorController : MonoBehaviour
     {
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
+            Debug.Log("Exit");
             timeOnElevator = 0;
             other.gameObject.transform.parent = null;
         }
