@@ -32,8 +32,9 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPosition = player.transform.position;
         Vector3 agentPosition = agent.transform.position;
+        Vector3 targetPosition = player.transform.position;
+        Vector3 targetPositionFlat = new Vector3(targetPosition.x, agentPosition.y, targetPosition.z);
         Vector3 direction;
 
         timeSinceFire += Time.deltaTime;
@@ -48,7 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
                         agent.SetDestination(agentPosition + direction * incrementDistance);
                     }
 
-                    agent.transform.LookAt(targetPosition);
+                    agent.transform.LookAt(targetPositionFlat);
 
                     NavMeshHit hit;
                     bool clearShot = !agent.Raycast(targetPosition, out hit);
