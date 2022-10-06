@@ -89,4 +89,9 @@ public class ElevatorController : MonoBehaviour
         bool returnValue = (mask & (1 << LayerMask.NameToLayer(layerName))) != 0;
         return returnValue;
     }
+
+    public string GetState()
+    {
+        return state;
+    }
 }
