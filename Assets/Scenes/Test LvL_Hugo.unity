@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 05ec5944d1a8a0a428e1992c8e53387e, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2438,7 +2438,7 @@ PrefabInstance:
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -3952,60 +3952,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d624dcc23f34f24fa227ff489813379, type: 3}
---- !u!1 &759552262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 759552264}
-  - component: {fileID: 759552263}
-  m_Layer: 0
-  m_Name: PlayerUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &759552263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759552262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f15002efa8b174b9dd0f9c1a609e14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  rifleChargeSlider: {fileID: 220795823}
-  rifleText: {fileID: 992474630}
-  rifleFill: {fileID: 0}
-  shotgunChargeSlider: {fileID: 2140688703}
-  shotgunText: {fileID: 927363398}
-  shotgunFill: {fileID: 0}
-  colorSliderNotCharging: {r: 0, g: 0, b: 0, a: 0}
-  colorSliderCharging: {r: 0, g: 0, b: 0, a: 0}
-  chargeColorBlinkSpeed: 0
---- !u!4 &759552264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759552262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 326.9463, y: 272.61157, z: 0.09802246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &762481043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4988,7 +4934,7 @@ PrefabInstance:
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -6180,7 +6126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786236955047747119, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2786236955047747119, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6987,7 +6933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786236955047747119, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2786236955047747119, guid: f241b3973e74ab245a39429f5932bcfd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7459,7 +7405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1567927721800829970, guid: 5cc16c8559e3f9a4aa788144dd7248e5, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1567927721800829970, guid: 5cc16c8559e3f9a4aa788144dd7248e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10050,7 +9996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1567927721800829970, guid: 5cc16c8559e3f9a4aa788144dd7248e5, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1567927721800829970, guid: 5cc16c8559e3f9a4aa788144dd7248e5, type: 3}
       propertyPath: m_LocalScale.x
@@ -10296,7 +10242,7 @@ PrefabInstance:
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -10530,7 +10476,7 @@ PrefabInstance:
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
