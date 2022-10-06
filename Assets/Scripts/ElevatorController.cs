@@ -13,7 +13,6 @@ public class ElevatorController : MonoBehaviour
     private float timeOnElevator;
     private Rigidbody rigid;
     private Vector3 origin;
-    private GameObject passenger;
 
     private void Start()
     {
