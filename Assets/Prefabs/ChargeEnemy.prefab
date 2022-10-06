@@ -139,6 +139,7 @@ MonoBehaviour:
   strikingDistance: 0
   incrementDistance: 3
   startState: Aggro
+  randomMoveSpeedOffset: 2
 --- !u!195 &2656759166409186735
 NavMeshAgent:
   m_ObjectHideFlags: 0
