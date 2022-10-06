@@ -8,10 +8,16 @@ public class ElevatorDoor : MonoBehaviour
     [SerializeField] private List<string> blockedStates;
     private Collider collie;
 
+    private void Start()
+    {
+        collie = GetComponent<Collider>();
+    }
+
     private void Update()
     {
         if (blockedStates.Contains(elevator.GetState()))
         {
+            Debug.Log("Blocked");
             collie.enabled = false;
         }
         else
