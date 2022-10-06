@@ -279,10 +279,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  innerKitingRange: 5
-  outerKitingRange: 8
+  innerKitingRange: 7
+  outerKitingRange: 7.5
   strikingDistance: 0
-  incrementDistance: 3
+  incrementDistance: 0.5
   startState: Shooting
 --- !u!195 &4375276711714316076
 NavMeshAgent:
@@ -294,7 +294,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 320
