@@ -17352,6 +17352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Divider lines for ammo
       objectReference: {fileID: 0}
+    - target: {fileID: 5829051896803808178, guid: cd1738a8d51cec14aae09052ae7b24e0, type: 3}
+      propertyPath: m_Name
+      value: UIPlayerManager
+      objectReference: {fileID: 0}
     - target: {fileID: 5829051896803808179, guid: cd1738a8d51cec14aae09052ae7b24e0, type: 3}
       propertyPath: player
       value: 
@@ -17454,7 +17458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5829051897044242549, guid: cd1738a8d51cec14aae09052ae7b24e0, type: 3}
       propertyPath: m_Name
-      value: UIprefab
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 5829051897047111870, guid: cd1738a8d51cec14aae09052ae7b24e0, type: 3}
       propertyPath: m_AnchorMax.x
