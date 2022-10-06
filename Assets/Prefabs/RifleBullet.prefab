@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 4598503099762932198, guid: aa7f388fabf365f449b682e3f3c79fac, type: 3}
   speed: 1200
-  damage: 100
+  damage: 50
   targetsMask:
     serializedVersion: 2
     m_Bits: 768
