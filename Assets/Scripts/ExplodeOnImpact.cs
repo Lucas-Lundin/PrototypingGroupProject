@@ -21,9 +21,9 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && LayerInMask("OnlyPlayer", targetsMask))
         {
-            other.gameObject.GetComponent<PlayerAttributes>().TakeDamage(damage);
             PlayEffect();
             EnemyManager.EnemyDies(gameObject);
+            other.gameObject.GetComponent<PlayerAttributes>().TakeDamage(damage);
         }
         else if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {

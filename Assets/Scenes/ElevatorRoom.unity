@@ -811,21 +811,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2737791784416854579, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737791784416854579, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 2737791784558644362, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737791784558644364, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4538962653689634301, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: slider
