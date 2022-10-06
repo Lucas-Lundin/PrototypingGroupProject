@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
-
+    [SerializeField] private Material damagedMaterial;
     private float currentHealth;
 
 
@@ -24,7 +24,18 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        /*
+        if (GetComponents<DamagedChangeColor>().Length != 0)
+        {
+            GetComponents<DamagedChangeColor>().ChangeColor();
+        }
+        */
+        if (damagedMaterial != null)
+        {
+            transform.GetChild(0).GetComponent<Renderer>().material = damagedMaterial;
+        }
+
+            if (currentHealth <= 0)
         {
             EnemyManager.EnemyDies(gameObject);
         }

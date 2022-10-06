@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  damagedMaterial: {fileID: 2100000, guid: 4228c1b8141ea4e4db7666bc094a95c5, type: 2}
 --- !u!136 &1090911568969330360
 CapsuleCollider:
   m_ObjectHideFlags: 0
