@@ -13,6 +13,7 @@ public class ElevatorController : MonoBehaviour
     private float timeOnElevator;
     private Rigidbody rigid;
     private Vector3 origin;
+    private GameObject passenger;
 
     private void Start()
     {
@@ -21,6 +22,37 @@ public class ElevatorController : MonoBehaviour
         timeOnElevator = 0;
     }
 
+    private void Update()
+    {
+        if (state == "rising")
+        {
+            timeOnElevator += Time.deltaTime;
+            Debug.Log(state);
+            var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, timeOnElevator / travelTime);
+            rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
+
+            if (timeOnElevator >= travelTime)
+            {
+                state = "up";
+                timeOnElevator = 0;
+                Debug.Log(state);
+            }
+        }
+        else if (state == "falling")
+        {
+            timeOnElevator += Time.deltaTime;
+            Debug.Log(state);
+            var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, (1 - timeOnElevator / travelTime));
+            rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
+
+            if (timeOnElevator >= travelTime)
+            {
+                state = "down";
+                timeOnElevator = 0;
+                Debug.Log(state);
+            }
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -40,38 +72,17 @@ public class ElevatorController : MonoBehaviour
                 state = "falling";
                 timeOnElevator = 0;
             }
-            else if (state == "rising")
-            {
-                Debug.Log(state);
-                var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, timeOnElevator / travelTime);
-                rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
-                other.gameObject.transform.parent = transform;
-
-                if (timeOnElevator >= travelTime)
-                {
-                    state = "up";
-                    timeOnElevator = 0;
-                    other.gameObject.transform.parent = null;
-                    Debug.Log(state);
-                }
-            }
-            else if (state == "falling")
-            {
-                Debug.Log(state);
-                var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, (1 - timeOnElevator / travelTime));
-                rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
-                other.gameObject.transform.parent = transform;
-
-                if (timeOnElevator >= travelTime)
-                {
-                    state = "down";
-                    timeOnElevator = 0;
-                    other.gameObject.transform.parent = null;
-                    Debug.Log(state);
-                }
-            }
         }
             
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
+        {
+            timeOnElevator = 0;
+            other.gameObject.transform.parent = gameObject.transform;
+        }
     }
 
     private void OnTriggerExit(Collider other)
