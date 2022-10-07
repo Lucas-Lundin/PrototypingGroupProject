@@ -12,8 +12,6 @@ public class PlayerFireController : MonoBehaviour
     [SerializeField] private WeaponController[] weapon;
     [SerializeField] private LineRenderer lineRendererRifle;
     [SerializeField] private LineRenderer lineRendererShotgun;
-    private int selectedWeapon = 0;
-
 
 
     [HideInInspector]
@@ -24,7 +22,7 @@ public class PlayerFireController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         lineRendererRifle.enabled = true;
-        lineRendererShotgun.enabled = false;
+        lineRendererShotgun.enabled = true;
     }
 
     private void Update()
@@ -34,34 +32,24 @@ public class PlayerFireController : MonoBehaviour
 
     void OnFire(InputValue value)
     {
-        weapon[selectedWeapon].Shoot();
+        GetRifle().Shoot();
     }
 
     void OnSwapWeapon(InputValue value)
     {
-        SwapWeapon();
+        GetShotgun().Shoot();
     }
 
 
-    void SwapWeapon()
+    public int GetChargingWeapon()
     {
-        if (selectedWeapon >= (weapon.Length -1)) // If you have the last weapon selected, switch to the first one in the array.
+        if(GetRifle().GetIsCharging())
         {
-            selectedWeapon = 0;
-            lineRendererRifle.enabled = true;
-            lineRendererShotgun.enabled = false;
+            return 0;
+        }else
+        {
+            return 1;
         }
-        else
-        {
-            selectedWeapon += 1;
-            lineRendererRifle.enabled = false;
-            lineRendererShotgun.enabled = true;
-        }     
-    }
-
-    public int GetSelectedWeapon()
-    {
-        return selectedWeapon;
     }
 
     public WeaponController GetRifle()

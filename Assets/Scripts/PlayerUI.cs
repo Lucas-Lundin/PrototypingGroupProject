@@ -36,7 +36,7 @@ public class PlayerUI : MonoBehaviour
     {
         UpdateShotgunChargeBar();
         UpdateRifleChargeBar();
-        HighlightSelectedWeapon();
+        HighlightChargingWeapon();
     }
 
 
@@ -78,14 +78,14 @@ public class PlayerUI : MonoBehaviour
         }
     }
     
-    void HighlightSelectedWeapon()
+    void HighlightChargingWeapon()
     {
-        if (0 == player.GetComponent<PlayerFireController>().GetSelectedWeapon())
+        if (0 == player.GetComponent<PlayerFireController>().GetChargingWeapon())
         {
             rifleText.fontStyle = FontStyles.Bold;
             shotgunText.fontStyle = FontStyles.Normal;
         }
-        if (1 == player.GetComponent<PlayerFireController>().GetSelectedWeapon())
+        if (1 == player.GetComponent<PlayerFireController>().GetChargingWeapon())
         {
             rifleText.fontStyle = FontStyles.Normal;
             shotgunText.fontStyle = FontStyles.Bold;

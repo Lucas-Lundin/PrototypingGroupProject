@@ -17,7 +17,6 @@ public class ElevatorDoor : MonoBehaviour
     {
         if (blockedStates.Contains(elevator.GetState()))
         {
-            Debug.Log("Blocked");
             collie.enabled = false;
         }
         else

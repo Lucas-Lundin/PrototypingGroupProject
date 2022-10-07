@@ -9,46 +9,67 @@ public class ElevatorController : MonoBehaviour
     [SerializeField] private float ascentDistance;
     [SerializeField] private string state;
     [SerializeField] private LayerMask targetsMask;
+    [SerializeField] private float panicResetTime;
 
+    private float timeOfLastSwap;
     private float timeOnElevator;
     private Rigidbody rigid;
     private Vector3 origin;
+    private string currentState;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
         origin = rigid.position;
         timeOnElevator = 0;
+        timeOfLastSwap = -1;
+        currentState = state;
     }
 
     private void Update()
     {
-        if (state == "rising")
+        if (currentState == "rising")
         {
             timeOnElevator += Time.deltaTime;
-            Debug.Log(state);
             var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, timeOnElevator / travelTime);
             rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
 
             if (timeOnElevator >= travelTime)
             {
-                state = "up";
+                currentState = "up";
                 timeOnElevator = 0;
-                Debug.Log(state);
+                timeOfLastSwap = Time.time;
             }
         }
-        else if (state == "falling")
+        else if (currentState == "falling")
         {
             timeOnElevator += Time.deltaTime;
-            Debug.Log(state);
             var targetY = Mathf.Lerp(origin.y, origin.y + ascentDistance, (1 - timeOnElevator / travelTime));
             rigid.MovePosition(new Vector3(rigid.position.x, targetY, rigid.position.z));
 
             if (timeOnElevator >= travelTime)
             {
-                state = "down";
+                currentState = "down";
                 timeOnElevator = 0;
-                Debug.Log(state);
+                timeOfLastSwap = Time.time;
+            }
+        }
+
+        //To prevent levels being locked by elevators
+        if (timeOfLastSwap > 0 && Time.time - timeOfLastSwap >= panicResetTime)
+        {
+            if (currentState == "up")
+            {
+                currentState = "falling";
+                timeOnElevator = 0;
+                timeOfLastSwap = Time.time;
+            }
+
+            if (currentState == "down")
+            {
+                currentState = "rising";
+                timeOnElevator = 0;
+                timeOfLastSwap = Time.time;
             }
         }
     }
@@ -59,17 +80,18 @@ public class ElevatorController : MonoBehaviour
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
             timeOnElevator += Time.deltaTime;
-            Debug.Log(other);
 
-            if (timeOnElevator >= warmupTime && state == "down")
+            if (timeOnElevator >= warmupTime && currentState == "down")
             {
-                state = "rising";
+                currentState = "rising";
                 timeOnElevator = 0;
+                timeOfLastSwap = Time.time;
             }
-            else if (timeOnElevator >= warmupTime && state == "up")
+            else if (timeOnElevator >= warmupTime && currentState == "up")
             {
-                state = "falling";
+                currentState = "falling";
                 timeOnElevator = 0;
+                timeOfLastSwap = Time.time;
             }
         }
             
@@ -79,7 +101,6 @@ public class ElevatorController : MonoBehaviour
     {
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
-            Debug.Log("Enter");
             timeOnElevator = 0;
             other.gameObject.transform.parent = gameObject.transform;
         }
@@ -89,7 +110,6 @@ public class ElevatorController : MonoBehaviour
     {
         if (LayerInMask(LayerMask.LayerToName(other.gameObject.layer), targetsMask))
         {
-            Debug.Log("Exit");
             timeOnElevator = 0;
             other.gameObject.transform.parent = null;
         }
@@ -104,6 +124,6 @@ public class ElevatorController : MonoBehaviour
 
     public string GetState()
     {
-        return state;
+        return currentState;
     }
 }
