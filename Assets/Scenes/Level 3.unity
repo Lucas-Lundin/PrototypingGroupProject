@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4ceae54f8d24fbf40ba94d791fdb2621, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ae1d92548f7a50d45ac8cec3357ff813, type: 2}
 --- !u!114 &3897620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6612142655720758370, guid: 9d624dcc23f34f24fa227ff489813379, type: 3}
@@ -1894,6 +1894,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
       value: down
       objectReference: {fileID: 0}
@@ -1969,8 +1973,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -3568,6 +3576,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
       value: down
       objectReference: {fileID: 0}
@@ -4766,8 +4778,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -4787,7 +4803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5122,8 +5138,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -5143,7 +5163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.94
+      value: 3.37
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7307,8 +7327,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2015824659}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170885, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: m_RootOrder
@@ -7453,6 +7477,10 @@ PrefabInstance:
       propertyPath: elevator
       value: 
       objectReference: {fileID: 2015824659}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
       value: down
@@ -7728,6 +7756,10 @@ PrefabInstance:
       propertyPath: elevator
       value: 
       objectReference: {fileID: 2015824659}
+    - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
+      propertyPath: blockedStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2823490058949170881, guid: d86e5793b1843404380771ade5cc57ad, type: 3}
       propertyPath: blockedStates.Array.data[0]
       value: down

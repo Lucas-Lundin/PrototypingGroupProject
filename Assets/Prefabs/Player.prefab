@@ -209,7 +209,7 @@ MonoBehaviour:
   maxCharge: 100
   initialRateBoost: 1.2
   chargeRate: 30
-  dischargeRate: 4
+  dischargeRate: 5
   fireCost: 15
   fireRate: 0.1
   movementController: {fileID: 2737791784416854541}
