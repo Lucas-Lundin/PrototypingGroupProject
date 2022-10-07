@@ -207,8 +207,9 @@ MonoBehaviour:
   bulletLifeSpan: 10
   charge: 0
   maxCharge: 100
-  chargeRate: 35
-  dischargeRate: 3
+  initialRateBoost: 1.2
+  chargeRate: 30
+  dischargeRate: 4
   fireCost: 15
   fireRate: 0.1
   movementController: {fileID: 2737791784416854541}
@@ -1187,6 +1188,7 @@ MonoBehaviour:
   bulletLifeSpan: 0.22
   charge: 0
   maxCharge: 100
+  initialRateBoost: 1.2
   chargeRate: 20
   dischargeRate: 3
   fireCost: 30

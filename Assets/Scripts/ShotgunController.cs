@@ -8,7 +8,8 @@ public class ShotgunController : WeaponController
 {
     [SerializeField] private float charge;
     [SerializeField] private float maxCharge;
-    
+
+    [SerializeField] private float initialRateBoost;
     [SerializeField] private float chargeRate;
     [SerializeField] private float dischargeRate;
     [SerializeField] private float fireCost;
@@ -37,9 +38,10 @@ public class ShotgunController : WeaponController
         // Charge while standing still
         else
         {
+            var adjustedChargeRate = charge < fireCost ? chargeRate * initialRateBoost : chargeRate;
             isCharging = true;
-            charge += chargeRate * Time.deltaTime;
-           
+            charge += adjustedChargeRate * Time.deltaTime;
+
         }
         charge = Mathf.Clamp(charge, minCharge, maxCharge);
 

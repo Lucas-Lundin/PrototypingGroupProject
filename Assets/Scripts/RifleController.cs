@@ -6,7 +6,8 @@ public class RifleController : WeaponController
 {
     [SerializeField] private float charge;
     [SerializeField] private float maxCharge;
-    
+
+    [SerializeField] private float initialRateBoost;
     [SerializeField] private float chargeRate;
     [SerializeField] private float dischargeRate;
     [SerializeField] private float fireCost;
@@ -28,8 +29,9 @@ public class RifleController : WeaponController
         // Charge while moving
         if (movementController.IsMoving())
         {
+            var adjustedChargeRate = charge < fireCost? chargeRate * initialRateBoost : chargeRate; 
             isCharging = true;
-            charge += chargeRate * Time.deltaTime;
+            charge += adjustedChargeRate * Time.deltaTime;
         }
         // Discharge while standing still
         else
